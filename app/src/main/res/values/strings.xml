@@ -3,11 +3,15 @@
 
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
     <string name="action_settings">Settings</string>
     <string name="action_fresh" translable = "false">fresh</string>
     <string name="action_map">Map Location</string>
+    <string name="action_share">Share</string>
+
     <string name="title_activity_detail">Detail</string>
     <string name="title_activity_settings">Settings</string>
+
     <string name="pref_location_label">Location</string>
     <string name="pref_location_default">94043</string>
     <string name="pref_location_key">location</string>
@@ -17,4 +21,5 @@
     <string name="pref_units_label_imperial">Imperial</string>
     <string name="pref_units_metric">metrics</string>
     <string name="pref_units_imperial">imperial</string>
+
 </resources>
