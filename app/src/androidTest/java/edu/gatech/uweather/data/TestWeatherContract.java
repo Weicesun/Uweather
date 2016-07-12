@@ -1,6 +1,5 @@
 package edu.gatech.uweather.data;
 
-import android.net.Uri;
 import android.test.AndroidTestCase;
 
 /**
