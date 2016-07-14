@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:xliff="http://schemas.android.com/apk/res-auto">
     <string name="app_name">Uweather</string>
 
 <!-- TODO: Remove or change this placeholder text -->
@@ -21,5 +21,12 @@
     <string name="pref_units_label_imperial">Imperial</string>
     <string name="pref_units_metric">metrics</string>
     <string name="pref_units_imperial">imperial</string>
+
+    <string name="today">Today</string>
+    <string name="tomorrow">Tomorrow</string>
+
+    <string name="format_full_friendly_date"><xliff:g id = "day">%1$s</xliff:g>, <xliff:g id = "date">
+        %2$s
+    </xliff:g></string>
 
 </resources>

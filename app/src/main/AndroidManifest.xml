@@ -31,7 +31,9 @@
         </activity>
         <provider
             android:authorities="edu.gatech.uweather"
-            android:name=".data.WeatherProvider" />
+            android:name=".data.WeatherProvider"
+            android:enabled="true"
+            android:exported="true"/>
     </application>
 
 </manifest>
