@@ -1,5 +1,8 @@
 package edu.gatech.uweather;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
@@ -37,6 +40,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import edu.gatech.uweather.data.WeatherContract;
+import edu.gatech.uweather.service.Service;
 
 /**
  * Created by weice_sun on 6/29/16.
@@ -145,9 +149,11 @@ public class ForecastFragment extends Fragment implements LoaderManager.LoaderCa
         getLoaderManager().restartLoader(FORCAST_LOADER, null, this);
     }
     private void updateWeather() {
-        FetchWeatherTask weatherTask = new FetchWeatherTask(getActivity());
-        String location = Utility.getPreferredLocation(getActivity());
-        weatherTask.execute(location);
+        Intent alarmIntent = new Intent(getActivity(), Service.AlarmReceiver.class);
+        alarmIntent.putExtra(Service.LOCATION_QUERY_EXTRA, Utility.getPreferredLocation(getActivity()));
+        PendingIntent pi = PendingIntent.getBroadcast(getActivity(), 0, alarmIntent, PendingIntent.FLAG_ONE_SHOT);
+        AlarmManager am = (AlarmManager)getActivity().getSystemService(Context.ALARM_SERVICE);
+        am.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + 5000, pi);
     }
 
 
